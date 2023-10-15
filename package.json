@@ -1,0 +1,14 @@
+{
+  "name": "cartoonapi",
+  "version": "1.0.0",
+  "description": "Cartoon API with express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CD",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
