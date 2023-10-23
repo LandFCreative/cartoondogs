@@ -1,37 +1,39 @@
 const express = require('express')
 const app = express()
 const PORT = 8000
+const cors = require('cors')
 
+app.use(cors())
 
 const cartoons = {
 	'snoopy': {
-		'cartoonName': 'snoopy',
-		'show': 'peanuts',
+		'cartoonName': 'Snoopy',
+		'show': 'Peanuts',
 		'breed': 'beagle'
 },
 	'pluto': {
-			'cartoonName': 'pluto',
-			'show': 'mickey Mouse',
+			'cartoonName': 'Pluto',
+			'show': 'Mickey Mouse',
 			'breed': 'mixed breed'
 	},
 	'shelper': {
-		'cartoonName': "santa's little helper",
-		'show': 'the simpsons',
+		'cartoonName': "Santa's Little Helper",
+		'show': 'The Simpsons',
 		'breed': 'greyhound'
 	},
 	'odie': {
-		'cartoonName': "odie",
-		'show': 'garfield',
+		'cartoonName': "Odie",
+		'show': 'Garfield',
 		'breed': 'unspecified'
 	},
 	'scooby doo': {
-		'cartoonName': "scooby doo",
-		'show': 'scooby doo',
+		'cartoonName': "Scooby Doo",
+		'show': 'Scooby Doo',
 		'breed': 'great dane'
 	},
 	'clifford': {
-		'cartoonName': "clifford",
-		'show': 'clifford the big red dog',
+		'cartoonName': "Clifford",
+		'show': 'Clifford The Big Red Dog',
 		'breed': 'vizsla'
 	},
 	'Unknown': {
@@ -45,9 +47,8 @@ const cartoons = {
 
 app.get('/', (request, response) => {
 	response.sendFile(__dirname + '/index.html')
-})
 //__dirname  will tell the computer to start looking in this area
-
+})
 
 app.get("/api/:name",(request, response)=>{
 	const dog = request.params.name.toLowerCase();
